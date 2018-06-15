@@ -47,7 +47,7 @@ $(function() {
         });
 
         it('there is at least one entry element', function () {
-            expect($('.parent .child').length).toBeGreaterThan(0)
+            expect($('.feed .entry').length).toBeGreaterThan(0);
         });
     });
 
