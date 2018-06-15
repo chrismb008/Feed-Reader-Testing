@@ -30,9 +30,9 @@ $(function() {
         });
 
         it('menu changes visibility', function() {
-            $('.menu-icon-link').trigger('click');
+            $('.menu-icon-link').click();
             expect($('body').hasClass('menu-hidden')).toBe(false);
-            $('.menu-icon-link').trigger('click');
+            $('.menu-icon-link').click();
             expect($('body').hasClass('menu-hidden')).toBe(true);
         });
     });
@@ -47,23 +47,22 @@ $(function() {
         });
 
         it('there is at least one entry element', function () {
-            expect($('.entry .feed')).toBeDefined();
+            expect($('.parent .child').length).toBeGreaterThan(0)
         });
     });
 
     describe('New Feed Selection', function() {
       var entriesFirst,
           entriesLast;
-          
+
         beforeEach(function(done) {
           $('.feed').empty();
           loadFeed(0, function() {
-            entriesFirst = $('.feed').find(allFeeds.url);
-            done();
-          });
-          loadFeed(1, function() {
-            entriesLast = $('.feed').find(allFeeds.url);
-            done();
+            entriesFirst = $('.feed').html();
+            loadFeed(1, function() {
+              entriesLast = $('.feed').html();
+              done();
+            });
           });
         });
 
