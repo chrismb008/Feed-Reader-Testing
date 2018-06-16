@@ -8,17 +8,17 @@ $(function() {
         });
 
         it('urls are defined', function() {
-            for(let i = 0; i < allFeeds.length; i++) {
-              expect(allFeeds[i].url).toBeDefined();
-              expect(allFeeds[i].url.lenght).not.toBe(0);
-            }
+            allFeeds.forEach(function(feed) {
+              expect(feed.url).toBeDefined();
+              expect(feed.url.lenght).not.toBe(0);
+            });
         });
 
         it('names are defined', function() {
-          for(let i = 0; i < allFeeds.length; i++) {
-            expect(allFeeds[i].name).toBeDefined();
-            expect(allFeeds[i].name.length).not.toBe(0);
-          }
+          allFeeds.forEach(function(feed) {
+            expect(feed.name).toBeDefined();
+            expect(feed.name.length).not.toBe(0);
+          });
         });
     });
 
